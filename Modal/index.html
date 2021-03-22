@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <div class="slider-container rev_slider_wrapper" style="height: 600px;">
+    <div id="revolutionSlider" class="slider rev_slider"
+         data-plugin-revolution-slider data-plugin-options="{'delay': 6000, 'gridwidth': 650, 'gridheight': 650}">
+        <ul>
+            <?php
+            $connected = mysqli_connect('192.168.1.14:3306', 'matabala', 'matabala', 'db_site_mees');
+            $estra = mysqli_query($connected, "SELECT SLIDES,ESTADO FROM view_ver_slides WHERE ESTADO='ACTIVO' order by ID_SLIDES DESC");
+            while ($linha = mysqli_fetch_assoc($estra)) {
+                $slides = $linha['SLIDES'];
+                ?>
+                <li data-transition="fade" style="">
+                    <img src="./Admin/Ficheiros/Slides/<?php echo $slides; ?>"  
+                         alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" 
+                         class="rev-slidebg" style="" />
+                </li>
+            <?php } fechar_conexao_php_mysql($connected); ?>
+        </ul>
+    </div>
+</div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Carousel Gallery Slider</title>
+        <link rel="stylesheet" type="text/css" href="css.css">
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+    </head>
+    <body>
+        <div class="galleryContainer">
+            <div class="slideShowContainer">
+                <div id="playPause" onclick="playPauseSlides()"></div>
+                <div onclick="plusSlides(-1)" class="nextPrevBtn leftArrow"><span class="arrow arrowLeft"></span></div>
+                <div onclick="plusSlides(1)" class="nextPrevBtn rightArrow"><span class="arrow arrowRight"></span></div>
+                <div class="captionTextHolder"><p class="captionText slideTextFromTop"></p></div>
+                <div class="imageHolder">
+                    <img src="../Admin/Ficheiros/Slides/IMG_0451.jpg">1366X768
+                    <p class="captionText">Caption Text-01</p>
+                </div>
+                <div class="imageHolder">
+                    <img src="../Admin/Ficheiros/Slides/IMG_0467.jpg">1366X768
+                    <p class="captionText">Caption Text-01</p>
+                </div>
+                <div class="imageHolder">
+                    <img src="../Admin/Ficheiros/Slides/IMG_0474.jpg">1366X768
+                    <p class="captionText">Caption Text-01</p>
+                </div>
+                <div class="imageHolder">
+                    <img src="images/img_1.jpg">1366X768
+                    <p class="captionText">Caption Text-01</p>
+                </div>
+                <div class="imageHolder">
+                    <img src="images/img_2.jpg">
+                    <p class="captionText">Caption Text-02</p>
+                </div>
+                <div class="imageHolder">
+                    <img src="images/img_3.jpg">
+                    <p class="captionText">Caption Text-03</p>
+                </div>
+                <div class="imageHolder">
+                    <img src="images/img_4.jpg">
+                    <p class="captionText">Caption Text-04</p>
+                </div>
+            </div>
+            <div id="dotsContainer"></div>
+        </div>
+        <script src="myScript.js"></script>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+.res{
+    background: url('../../resources/img/img_mp.jpeg'); 
+    background-size: cover;
+}
+#fundo_descr{
+    background: #fff;
+}

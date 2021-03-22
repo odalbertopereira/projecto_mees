@@ -1,0 +1,9 @@
+
+#formL{background: #fff; border:1px solid #CCC; -webkit-border-radius:5px; -moz-border-radius:5px;width: 642px; height: 266px; margin: 0 auto;}
+#formL p {background:none; margin:4px 22px 30px; padding: 10px ;border-bottom:1px solid #CCC;font-size: 18px;}
+#formL div{ background: none; margin:0 auto 15px; text-align: center; width: 273px;  }
+#formL label{background: none; padding: 5px  10px; color: #7D6666;}
+#formL input[type='text'],input[type='password']{border:1px solid #BDC7D8; height: 20px; padding: 0 5px; width: 200px; margin-right: -1px; }
+#formL button {background: #5C74A9;border:1px solid #29447E; float: right;cursor: pointer;color: #fff; padding: 5px 10px; font-weight: bolder;  }
+#formL button:hover{background: #5C74A9; opacity: 0.8;}
+#formL #spanL{ float: right; width: 154px;}
